@@ -143,11 +143,27 @@
 // foreach won't return anything
 
 
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
-var store = numbers.map(function(elem){
-    return elem * 10;
-})
+// var store = numbers.map(function(elem){
+//     return elem * 10;
+// })
 
-console.log(store);
+// console.log(store);
+
+
+
+
+// reduce
+// return an single value
+
+var number = [1, 2, 3, 4, 5];
+
+var res = number.reduce(function(cv, ac){
+    return cv + ac;
+},0)
+
+
+console.log(res);
+
