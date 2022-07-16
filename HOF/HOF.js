@@ -167,3 +167,6 @@ var res = number.reduce(function(cv, ac){
 
 console.log(res);
 
+
+// Chaining
+
