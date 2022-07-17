@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    input{
+        border: 1px solid black;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: black;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+
+</style>
+
+<body>
+    <input id="in" type="text" placeholder="Enter your name">
+    <input id="no" type="number" placeholder="Enter you number">
+    <select id="ge">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <button onclick="getValue()">Submit</button>
+</body>
+</html>
+
+
+
+<script>
+    function getValue(){
+        console.log("Clicked");
+        // using .value we can get the value from input area
+        var x = document.getElementById("in").value;
+        var y = document.getElementById("no").value;
+        var z = document.getElementById("ge").value;
+
+        console.log(x,y,z);
+
+        // if(x == "admin"){
+        //     console.log("Login successfully")
+        // }else{
+        //     console.log("retry...")
+        // }
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container1">
+        <span>Inside container1 span tag</span>
+    </div>
+    <div id="container2">Container-2</div>
+    <h1 id="heading1">Heading-1</h1>
+    <h2 id="heading2">Heading-2</h2>
+    <p id="para">Paragraph</p>
+
+</body>
+</html>
+
+
+
+<script>
+    console.log(document.getElementById("container1").innerHTML);
+    console.log(document.getElementById("container2").textContent);
+    console.log(document.getElementById("heading1").textContent);
+    console.log(document.getElementById("heading2").textContent);
+    console.log(document.getElementById("para").textContent);
+
+
+    //textContent and innerHTML both are same but in innerHTML we also can provide tags according them it will change.
+    var x = document.getElementById("container2").textContent = "How are you";
+    console.log(x);
+
+
+    var y = document.getElementById("heading1").innerHTML = "what's up";
+    var z = document.getElementById("heading1").innerHTML = "<h1>new one</h1>";
+
+    console.log(z);
+</script>

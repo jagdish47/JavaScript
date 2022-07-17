@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHtml</title>
+</head>
+<body>
+    <h1 id="heading-1">Jagdish Kumawat</h1>
+    <h3 id="heading-2">Software Developer at Google</h3>
+    <p id="para">My name is Jagdish kumawat Ex-software engineer at Microsoft, Currently working in Google as SDE-3</p>
+</body>
+</html>
+
+
+<script>
+    document.getElementById("heading-1").innerHTML = "<h3>Anshu Kumawat</h3>";
+    //innerHTML - we can also provide tags but in textContent we can't provide any tags there.
+    document.getElementById("para").textContent = "My self Ansh Kumawat Currently working at Google";
+</script>
