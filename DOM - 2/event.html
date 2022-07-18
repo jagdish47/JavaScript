@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container{
+            display: flex;
+
+        }
+        #container>div{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            font-size: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>
+
+<script>
+    var boxes = document.querySelectorAll("#container>div");
+    console.log(boxes);
+
+    for(var i = 0; i < boxes.length; i++){
+        boxes[i].addEventListener("click", changeColor);
+    }
+
+    // function changeColor(event){
+    //     // console.log(event.target); //complete div
+    //     // console.log(event.target.textContent); //getting textContent Inside
+
+    //     // event.target.style.backgroundColor = "teal";
+    //     // event.target.textContent = "clicked";
+    //     console.log(event.target.parentNode)
+    //     console.log(event.target.parentNode.style.backgroundColor = "grey");
+    //     console.log(event.target.nextElementSibling.style.backgroundColor = "yello");
+
+    // }
+
+
+
+    document.getElementById("container").addEventListener("click", changeColor);
+
+    function changeColor(event){
+        // console.log(event.target.firstElementChild);
+        event.target.firstElementChild.style.backgroundColor = "blue";
+        event.target.lastElementChild.style.color = "red";
+    }
+</script>

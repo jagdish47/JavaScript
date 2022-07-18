@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="/storage1.jpg" alt="" />
+  </body>
+</html>
+
+<script>
+  var storage = [
+    { image: "storage1.jpg", name: "Latest Men's Sneaker", price: "$25" },
+
+    {
+      image: "storage2.jpg",
+      name: "Latest Men's Jeans",
+      price: "$35",
+    },
+    {
+      image: "storage3.jpg",
+      name: "Latest Men's Watch",
+      price: "$15",
+    },
+
+    {
+      image: "storage1.jpg",
+      name: "Latest Men's T-shirts",
+      price: "$5",
+    },
+  ];
+
+  var div = document.createElement('div');
+
+  storage.map(function(ele){
+
+      console.log(ele)
+      var image = document.createElement('img');
+      image.setAttribute('src','ele.image');
+      var h3 = document.createElement('h3');
+      h3.textContent = ele.name;
+
+      var p = document.createElement('p');
+      p.textContent = ele.price
+
+      div.append(image, h3, p);
+      
+      var body = document.querySelector('body');
+      body.append(body);
+
+  });
+
+  
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>addEventListener</title>
+  </head>
+
+  <style>
+    button {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      background-color: #ffffff;
+      border: 1px solid rgb(209, 213, 219);
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      color: #111827;
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+      padding: 0.75rem 1rem;
+      text-align: center;
+      text-decoration: none #d1d5db solid;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <!-- <button id="btn">Submit</button> -->
+
+    <button id="inc">Increment</button>
+    <button id="dec">Decrement</button>
+    <h1 id="head"></h1>
+  </body>
+</html>
+
+<script>
+  //   document.getElementById("btn").addEventListener("click", myFunction);
+
+  //   function myFunction() {
+  //     console.log("Clicked...");
+  //   }
+
+  var display = document.getElementById("head");
+
+  var count = 0;
+
+
+  
+  document.getElementById("inc").addEventListener("click", Increment);
+
+  function Increment() {
+    count++;
+    display.innerHTML = count;
+  }
+
+  document.getElementById("dec").addEventListener("click", Decrement);
+
+  function Decrement(event) {
+    console.log(event)
+    count--;
+    display.innerHTML = count;
+
+    if (count <= 0) {
+      //   return display.textContent = "Can't go below 0";
+      document.getElementById("dec").removeEventListener("click", Decrement);
+    }
+  }
+</script>

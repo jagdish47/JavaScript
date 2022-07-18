@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+    var mainDiv = document.createElement("div");
+    var imageDiv = document.createElement("div");
+    var textDiv = document.createElement("div");
+
+    var image = document.createElement("img");
+    image.setAttribute("src", "Day-5/IMG_20190502_182734_687.jpg");
+
+    var header = document.createElement("h3");
+    header.textContent = "Alice Liddel";
+
+    var para = document.createElement("p");
+    para.textContent = "Alice is a freelance web designer and develper based in London. She is specialized in HTML5, CSS3, JavaScript, Bootstrap etc.";
+
+    var button = document.createElement("button");
+    button.textContent = "View Profile";
+
+    imageDiv.append(image);
+    textDiv.append(header, para, button);
+
+    mainDiv.append(imageDiv, textDiv);
+
+    var body = document.querySelector("body");
+    
+    body.append(mainDiv);
+
+
+</script>
