@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-Question-1</title>
+</head>
+<style>
+    p{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+</style>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+
+    // select body 
+    var body = document.querySelector('body');
+
+    // created elements
+    var div_1 = document.createElement('div');
+    var image_1 = document.createElement('img');
+    var para_1 = document.createElement('p');
+
+    // set attribute to img tag
+    image_1.setAttribute("src","Quote-two.jpg");
+
+    // adding content to paragraph
+    para_1.textContent = "Pichai Sundararajan, better known as Sundar Pichai, is an Indian-American business executive. He is the chief executive officer of Alphabet Inc. and its subsidiary Google. Born in Madurai, India, Pichai earned his degree from IIT Kharagpur in metallurgical engineering";
+
+    // appending data into body tag
+    div_1.append(image_1, para_1);
+    body.append(div_1);
+
+
+    // Giving style
+    div_1.style.height = "500px";
+    div_1.style.width = "500px";
+    div_1.style.border = "1px solid grey";
+    div_1.style.padding = "10px"
+    div_1.style.borderRadius = "5px";
+
+    image_1.style.height = "400px";
+    image_1.style.width = "500px";
+    image_1.style.borderRadius = "3px";
+
+    para_1.style.fontFamily = "'Lucida Grande', 'Lucida Sans', Arial, sans-serif";
+
+
+</script>
