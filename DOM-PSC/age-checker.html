@@ -1,0 +1,94 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>age-cheacker</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 250px;
+      width: 250px;
+      margin: auto;
+      box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    }
+
+    .container #number {
+      -moz-appearance: textfield;
+    }
+
+    #text {
+      width: 200px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #number {
+      width: 200px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    #btn {
+      width: 100px;
+      font-family: "Lucida Sans", Arial, sans-serif;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+    }
+
+    #btn:hover {
+      border: 1px solid black;
+      transition: all 0.5s;
+    }
+
+    *:focus {
+      outline: none;
+      border: 3px solid #555;
+    }
+
+    #output {
+	border: 1px solid black;
+	width: 200px;
+	height: 35px;
+	text-align: center;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-top: 20px;
+	font-size: 20px;
+    padding-top: 10px;
+}
+  </style>
+  <body>
+    <div class="container">
+      <input id="text" type="text" placeholder="Name" />
+      <input id="number" type="number" placeholder="Age" />
+      <button id="btn" onclick="btnFunction()">CHECK</button>
+
+      <div id="output">output</div>
+    </div>
+  </body>
+</html>
+
+<script>
+
+
+    var age = document.getElementById("number").value;
+
+    function btnFunction(){
+        if(age >= 18){
+            document.getElementById("output").textContent = "Eligible for Drive";
+        }else if(age < 18){
+            document.getElementById("output").textContent = "Not, Eligible for Drive";
+            
+        }
+    }
+</script>
