@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+
+    <style>
+        #todo-form{
+            border: 2px solid black;
+            width: 350px;
+            height: 220px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 20px;
+        }
+
+        #name{
+            padding: 10px;
+            font-family: monospace;
+            font-size: 20px;
+            margin: 10px;
+            margin-left: 33px;
+
+        }
+        #name:focus{
+            outline: none;
+            border: 2px solid black;
+        }
+
+        #quantity{
+            padding: 10px;
+            font-family: monospace;
+            font-size: 20px;
+            margin-bottom: 10px;
+            
+            -moz-appearance: textfield;
+        }
+        #quantity:focus{
+            outline: none;
+            border: 2px solid black;
+        }
+
+        #options{
+            padding: 5px;
+            font-family: monospace;
+            font-size: 20px;
+            margin-left: 10px;
+
+            margin-bottom: 10px;
+
+
+        }
+        #options:focus{
+            outline: none;
+            border: 2px solid black;
+        }
+
+        #submit{
+            padding: 10px;
+            font-family: monospace;
+            font-size: 20px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 126px;
+            margin-left: 5px;
+
+        }
+  
+    </style>
+
+  </head>
+  <body>
+    <div class="heading">
+        <h3>Todo List</h3>
+    </div>
+    <form id="todo-form">
+      <div class="name">
+        <label>NAME</label>
+        <input type="text" id="name" />
+      </div>
+
+      <div class="quantity">
+        <label>QUANTITY</label>
+        <input type="number" id="quantity" />
+      </div>
+
+      <div class="priority">
+        <label>PRIOTITY</label>
+        <select id="options">
+          <option value="">select</option>
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
