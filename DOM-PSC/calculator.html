@@ -17,7 +17,7 @@
         margin: auto;
       }
 
-      .display-div input {
+      .display-div {
         height: 69px;
         width: 400px;
         margin: auto;
@@ -60,23 +60,40 @@
   </head>
   <body>
     <div class="container">
-      <div class="display-div">
-        <input type="text" />
-      </div>
+      <div class="display-div"></div>
 
       <div class="button-div">
-        <button class="btn-1 btn">0</button>
-        <button class="btn-2 btn">1</button>
-        <button class="btn-3 btn">2</button>
-        <button class="btn-4 btn">3</button>
-        <button class="btn-5 btn">4</button>
-        <button class="btn-6 btn">5</button>
-        <button class="btn-7 btn">6</button>
-        <button class="btn-8 btn">7</button>
-        <button class="btn-9 btn">8</button>
-        <button class="btn-10 btn">9</button>
-        <button class="btn-11 btn">Clear</button>
+        <button class="btn-1 btn" onclick="press('0')">0</button>
+        <button class="btn-2 btn" onclick="press('1')">1</button>
+        <button class="btn-3 btn" onclick="press('2')">2</button>
+        <button class="btn-4 btn" onclick="press('3')">3</button>
+        <button class="btn-5 btn" onclick="press('4')">4</button>
+        <button class="btn-6 btn" onclick="press('5')">5</button>
+        <button class="btn-7 btn" onclick="press('6')">6</button>
+        <button class="btn-8 btn" onclick="press('7')">7</button>
+        <button class="btn-9 btn" onclick="press('8')">8</button>
+        <button class="btn-10 btn" onclick="press('9')">9</button>
+        <button class="btn-11 btn" onclick="clearFunc()">Clear</button>
       </div>
     </div>
   </body>
 </html>
+
+
+<script>
+  // var display = document.getElementsByClassName("display-div");
+  var out = "";
+  function press(num){
+    // console.log(num);
+    out += num;
+    // console.log(out)
+    document.querySelector(".display-div").textContent = out;
+
+  }
+
+  function clearFunc(){
+    out = "";
+    document.querySelector(".display-div").textContent = out;
+  }
+
+</script>
