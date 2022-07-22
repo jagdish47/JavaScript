@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+    // localStorage.setItem("name1","Jagdish Kumawat");
+    // localStorage.setItem("age1", 24);
+    // localStorage.setItem("gender1", "male");
+    // localStorage.setItem("name2", "Ansh Kumawat");
+    // localStorage.setItem("age2", 1);
+    // localStorage.setItem("gender2", "male");
+    // localStorage.setItem("name3", "Yuvraj Kumawat");
+    // localStorage.setItem("age3", 9);
+    // localStorage.setItem("gender3", "male");
+
+
+    // var name = localStorage.getItem("name");
+    // var age = localStorage.getItem("age");
+    // var gender = localStorage.getItem("gender");
+    // console.log(name, age, gender);
+
+
+
+    // localStorage.removeItem("name3");
+    // localStorage.removeItem("age3");
+    // localStorage.removeItem("gender3");
+
+
+    // //Clear everything no need to pass any key or value.
+    // localStorage.clear();
+
+
+
+
+
+
+    // HOW TO STORE ARRAY IN LOCAL STORAGE
+
+    // var arr = [1, 2, 3, 4, 5];
+    
+    // localStorage.setItem("arr_one",JSON.stringify(arr));
+
+
+    // var res = JSON.parse(localStorage.getItem("arr_one"));
+    // console.log(res);
+
+
+
+
+
+
+    // HOW TO STORE OBJECT IN LOCALSTORAGE
+
+    var obj = {
+        name : "Jagdish Kumawat",
+        age : 23,
+        gender : "Male"
+    };
+
+
+   localStorage.setItem("Object", JSON.stringify(obj));
+
+    var object = localStorage.getItem("Object");
+    object = JSON.parse(object);
+    console.log(object);
+
+
+
+
+    // Whenever you are storing into localstorage you need to stringify.
+    // Whenever you are getting value form localStorage you need to parse.
+</script>
