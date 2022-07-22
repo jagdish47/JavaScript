@@ -74,10 +74,11 @@
         text-decoration: underline;
       }
 
-      th, td{
+      th,
+      td {
         border: 1px solid black;
         padding: 5px 60px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
       }
     </style>
   </head>
@@ -130,8 +131,11 @@
   // Selection of form and give function on submit
   document.querySelector("#todo-form").addEventListener("submit", addItem);
 
+  // whenever we add new item in object it will override the previous value because we can't add duplicate keys in the object
+  var arr = JSON.parse(localStorage.getItem("todoList"));
+  displayTable(arr);
 
-  function addItem(event){
+  function addItem(event) {
     // use for form because value form refresh each time
     event.preventDefault();
 
@@ -140,42 +144,59 @@
     var quantity = document.querySelector("#quantity").value;
     var options = document.querySelector("#options").value;
 
+    // Creating object here of to do list
+    var todoObj = {
+      itemName: name,
+      itemQuantity: quantity,
+      itemOptions: options,
+    };
+
+    // pushing values inside array
+    arr.push(todoObj);
+    console.log(arr);
+
+    // adding array into the localStorage
+    localStorage.setItem("todoList", JSON.stringify(arr));
+
     // console.log(name, quantity, options);
-
-
-    // creating table row
-    var row = document.createElement("tr");
-
-
-    var td1 = document.createElement("td");
-    td1.textContent = name;
-    var td2 = document.createElement("td");
-    td2.textContent = quantity;
-
-
-    var td3 = document.createElement("td");
-    td3.textContent = options;
-
-    if(options == "High"){
-      td3.style.backgroundColor = "red";
-    }else if(options == "Medium"){
-      td3.style.backgroundColor = "green";
-    }
-
-
-    var td4 = document.createElement("td");
-    td4.textContent = "Delete";
-    td4.style.cursor = "pointer";
-    td4.addEventListener("click", deleteTask);
-
-    row.append(td1, td2, td3, td4);
-
-    var body = document.querySelector("body").append(row);
+    displayTable(arr);
   }
 
+  function displayTable(arr) {
+
+    document.querySelector("tbody").innerHTML = "";
+
+    arr.map(function (elem) {
+      // creating table row
+      var row = document.createElement("tr");
+
+      var td1 = document.createElement("td");
+      td1.textContent = elem.itemName;
+      var td2 = document.createElement("td");
+      td2.textContent = elem.itemQuantity;
+
+      var td3 = document.createElement("td");
+      td3.textContent = elem.itemOptions;
+
+      if (elem.itemOptions == "High") { 
+        td3.style.backgroundColor = "red";
+      } else if (elem.itemOptions == "Medium") {
+        td3.style.backgroundColor = "green";
+      }
+
+      var td4 = document.createElement("td");
+      td4.textContent = "Delete";
+      td4.style.cursor = "pointer";
+      td4.addEventListener("click", deleteTask);
+
+      row.append(td1, td2, td3, td4);
+
+      var body = document.querySelector("body").append(row);
+    });
+  }
 
   // delete row function
-  function deleteTask(event){
-    event.target.parentNode.remove();
-  }
+  // function deleteTask(event) {
+  //   event.target.parentNode.remove();
+  // }
 </script>
