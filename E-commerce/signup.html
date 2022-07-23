@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin: auto;
+      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+      height: 420px;
+      width: 400px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    #form .sign-up-form input {
+      padding: 10px 130px 10px 25px;
+      margin: 10px;
+      font-size: 20px;
+      -moz-appearance: textfield;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 2px solid grey;
+    }
+
+    #form .sign-up-form input:focus {
+      outline: none;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
+      border-bottom: 2px solid rgb(0, 0, 0);
+    }
+
+    .container #signup {
+      text-align: center;
+      font-family: cursive;
+      font-size: 50px;
+      margin: 20px;
+    }
+
+    #form .sign-up-form #submit {
+      padding: 5px 150px 5px 140px;
+      border: none;
+      border-radius: 0px 5px 0px 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: black;
+      color: white;
+      
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div id="signup">Sign-Up</div>
+
+      <div id="form">
+        <form class="sign-up-form">
+          <input type="email" name="Email" id="email" placeholder="Email" />
+          <input
+            type="password"
+            name="Password"
+            id="password"
+            placeholder="Password"
+          />
+          <input
+            type="text"
+            name="Username"
+            id="username"
+            placeholder="Username"
+          />
+          <input type="number" name="mobile" id="mobile" placeholder="Mobile" />
+
+          <input id="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

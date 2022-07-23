@@ -156,7 +156,7 @@
     console.log(arr);
 
     // adding array into the localStorage
-    localStorage.setItem("todoList", JSON.stringify(arr));
+    localStorage.setItem("todoList", JSON.stringify(arr)) || [];
 
     // console.log(name, quantity, options);
     displayTable(arr);
@@ -187,7 +187,9 @@
       var td4 = document.createElement("td");
       td4.textContent = "Delete";
       td4.style.cursor = "pointer";
-      td4.addEventListener("click", deleteTask);
+      td4.addEventListener("click", function(){
+        deleteTask(index);
+      });
 
       row.append(td1, td2, td3, td4);
 
@@ -196,7 +198,9 @@
   }
 
   // delete row function
-  // function deleteTask(event) {
-  //   event.target.parentNode.remove();
-  // }
+  function deleteTask(index) {
+    arr.splice(index, 1);
+    localStorage.setItem("todoList", JSON.stringify(arr));
+    displ
+  }
 </script>
