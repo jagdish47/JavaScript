@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-in</title>
-</head>
-<body>
-    <h1>Sign In</h1>
-</body>
+  </head>
+
+  <style>
+    .container {
+      height: 315px;
+      width: 300px;
+      border: 1px solid black;
+      margin: auto;
+      box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+      border: none;
+    }
+
+    .container h1 {
+      font-family: cursive;
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .form-container input {
+      padding: 10px 70px 10px 5px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom-color: currentcolor;
+      border-bottom-style: none;
+      border-bottom-width: medium;
+      border-bottom: 2px solid black;
+      font-size: 20px;
+    }
+
+    .form-container input:focus{
+        outline: none;
+    }
+    #button {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      padding: 10px 25px 10px 25px;
+      margin: 0px 0px 0px 90px;
+      font-size: 20px;
+      background-color: rgb(60, 60, 60);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #button:hover{
+        background-color: rgb(0, 0, 0);
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <h1>Sign In</h1>
+
+      <div class="form-container">
+        <input type="email" name="Email" id="email" placeholder="Email" />
+        <input
+          type="password"
+          name="Password"
+          id="password"
+          placeholder="Password"
+        />
+
+        <button id="button">Sign-In</button>
+      </div>
+    </div>
+  </body>
 </html>
+
+
+<script>
+
+    document.querySelector("button").addEventListener("click", SignIn);
+
+    var regUser = JSON.parse(localStorage.getItem("userDatabase"));
+    console.log(regUser);
+
+    function SignIn(){
+
+        var email = document.querySelector("#email").value;
+        var password = document.querySelector("#password").value;
+
+        if(email == "admin" && password == "admin"){
+            window.location.href = "admin.html";
+        }else{
+
+            for(var i = 0; i < regUser.length; i++){
+                if(regUser[i].emailAdd == email && regUser[i].pass == password){
+                    window.location.href = "prod.html";
+                }
+            }
+        }
+    }
+</script>

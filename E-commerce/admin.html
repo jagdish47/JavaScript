@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      margin: auto;
+      /* border: 1px solid black; */
+      height: 500px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    }
+
+    h1 {
+      font-family: cursive;
+    }
+
+    #form input {
+      height: 40px;
+      width: 400px;
+      padding: 0px 10px;
+      margin: 9px 0 10px 42px;
+      font-size: 15px;
+      -moz-appearance: textfield;
+    }
+
+    #form input:focus {
+      outline: none;
+      border: 2px solid black;
+    }
+
+    #select {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      padding: 10px 15px;
+      font-size: 15px;
+      margin: 5px 9px 5px 40px;
+    }
+
+    #form #submit {
+      height: 40px;
+      width: 125px;
+    }
+
+    #btn {
+      height: 40px;
+      width: 125px;
+      font-size: 15px;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+      margin: 12px 290px 0px 0px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h1>ADMIN PAGE</h1>
+      </div>
+
+      <form id="form">
+        <input type="text" id="name" placeholder="Enter name of Product" />
+
+        <input type="number" id="price" placeholder="Enter price" />
+
+        <select id="select">
+          <option value="">Category</option>
+          <option value="tee">Tee</option>
+          <option value="shoes">Shoes</option>
+          <option value="shirt">Shirt</option>
+        </select>
+
+        <input type="text" id="img" placeholder="Enter Image URL" />
+
+        <input type="Submit" value="Submit" id="submit" />
+      </form>
+
+      <button id="btn">Go to Shop</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#form").addEventListener("submit", addItem);
+
+  var prod = JSON.parse(localStorage.getItem("shoppingItems")) || [];
+
+  function addItem(event) {
+    event.preventDefault();
+
+    var name = document.querySelector("#name").value;
+    var price = document.querySelector("#price").value;
+    var type = document.querySelector("#select").value;
+    var image = document.querySelector("#img").value;
+
+    var prodObj = {
+      name: name,
+      price: price,
+      type: type,
+      image: image,
+    };
+
+    prod.push(prodObj);
+    localStorage.setItem("shoppingItems", JSON.stringify(prod));
+
+    console.log(prodObj);
+  }
+
+  document.querySelector("#btn").addEventListener("click", function () {
+    window.location.href = "prod.html";
+  });
+</script>
+
+
