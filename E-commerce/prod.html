@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+
+    <style>
+        #cont{
+            display: flex;
+        }
+    </style>
 </head>
 <body>
     <h1>Products</h1>
+    <div id="cont"></div>
 </body>
 </html>
+
+<script>
+    var products = JSON.parse(localStorage.getItem("shoppingItems"));
+    var cart = [];
+    console.log(products);
+    products.map(function(elem){
+
+        var div = document.createElement("div");
+
+        var img = document.createElement("img");
+        img.setAttribute("src", elem.image);
+
+        var h2 = document.createElement("h2");
+        h2.textContent = elem.name;
+
+        var price = document.createElement("p");
+        price.textContent = elem.price;
+
+        var btn = document.createElement("button");
+        btn.textContent = "Add to Cart";
+
+        btn.addEventListener("click", function(){
+            addToCart(elem);
+        })
+
+        div.append(img, h2, price, btn);
+        document.querySelector("#cont").append(div);
+    });
+
+    function addToCart(elem){
+        console.log(elem);
+    }
+
+    // add elements to cart array, and store cart array into Localstorage
+</script>
