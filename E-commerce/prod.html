@@ -1,54 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products</title>
 
     <style>
-        #cont{
-            display: flex;
-        }
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #cont {
+        display: flex;
+      }
+
+      .container {
+        height: 420px;
+        width: 350px;
+        border: 2px solid black;
+        margin: 10px;
+      }
+      img {
+        height: 300px;
+        width: 300px;
+      }
+      h2 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+
+      button {
+        font-family: 'Times New Roman', Times, serif;
+        padding: 15px 10px 7px 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <button></button>
     <h1>Products</h1>
     <div id="cont"></div>
-</body>
+  </body>
 </html>
 
 <script>
-    var products = JSON.parse(localStorage.getItem("shoppingItems"));
-    var cart = [];
-    console.log(products);
-    products.map(function(elem){
+  var products = JSON.parse(localStorage.getItem("shoppingItems"));
 
-        var div = document.createElement("div");
+  var cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-        var img = document.createElement("img");
-        img.setAttribute("src", elem.image);
+  document.querySelector("button").textContent = cart.length;
+  console.log(products);
 
-        var h2 = document.createElement("h2");
-        h2.textContent = elem.name;
+  displayItem(products);
 
-        var price = document.createElement("p");
-        price.textContent = elem.price;
+  function displayItem(products){
+    products.map(function (elem) {
+    var div = document.createElement("div");
+    div.classList.add("container");
 
-        var btn = document.createElement("button");
-        btn.textContent = "Add to Cart";
+    var img = document.createElement("img");
+    img.setAttribute("src", elem.image);
 
-        btn.addEventListener("click", function(){
-            addToCart(elem);
-        })
+    var h2 = document.createElement("h2");
+    h2.textContent = elem.name;
 
-        div.append(img, h2, price, btn);
-        document.querySelector("#cont").append(div);
+    var price = document.createElement("p");
+    price.textContent = elem.price;
+
+    var btn = document.createElement("button");
+    btn.textContent = "Add to Cart";
+
+    btn.addEventListener("click", function () {
+      addToCart(elem);
     });
 
-    function addToCart(elem){
-        console.log(elem);
-    }
+    div.append(img, h2, price, btn);
+    document.querySelector("#cont").append(div);
+  });
+  }
+  
 
-    // add elements to cart array, and store cart array into Localstorage
+  function addToCart(elem) {
+    console.log(elem);
+    cart.push(elem);
+    localStorage.setItem("cartItem", JSON.stringify(cart))
+  }
+
+  // add elements to cart array, and store cart array into Localstorage
 </script>
