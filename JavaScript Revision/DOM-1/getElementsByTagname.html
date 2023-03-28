@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting elements by tag name</title>
+  </head>
+  <body>
+    <h1>One</h1>
+    <h1>Two</h1>
+    <h1>Three</h1>
+    <h1>Four</h1>
+    <h1>Five</h1>
+
+    <p>Jagdish</p>
+    <p>Kumawat</p>
+
+    <span>Lorem ipsum dolor sit amet.</span>
+  </body>
+</html>
+
+<script>
+  let h1 = document.getElementsByTagName("h1");
+  console.log(h1);
+  console.log(h1[0]);
+  console.log(h1[1]);
+  console.log(h1[2]);
+
+  for (let i = 0; i < h1.length; i++) {
+    console.log(h1[i].textContent);
+  }
+
+  let p = document.getElementsByTagName("p");
+  console.log(p[0]);
+  console.log(p[1]);
+
+  let span = document.getElementsByTagName("span");
+  console.log(span[0]);
+  console.log(span[1]); //gives undefined because not such index available
+</script>
+
+<!-- it will also return an array HTMLCollection -->
+<!-- we have to use index to get their values -->

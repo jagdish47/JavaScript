@@ -1,0 +1,15 @@
+Decendent Combinator(spance);
+div p{} select all p inside div.
+div p span{} select all span inside p inside div.
+
+
+
+Child combinator (>): Selects an element that is a direct child of another element. For example, the following selector would select all ul elements that are direct children of a div element:
+div > ul{}
+
+
+Adjacent sibling combinator (+): Selects an element that is immediately following another element, and both elements share the same parent. For example, the following selector would select all p elements that immediately follow a h2 element:
+
+h2 + p {
+  /* styles */
+}

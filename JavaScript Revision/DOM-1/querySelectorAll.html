@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecting Elements by QuerySelectorAll</title>
+  </head>
+  <body>
+    <h1>Heading-one</h1>
+    <h1>Heading-two</h1>
+    <h1>Heading-three</h1>
+
+    <p class="one">AAA</p>
+    <p class="one">BBB</p>
+    <p class="one">CCC</p>
+    <p class="one">DDD</p>
+
+    <span id="two">YYY</span>
+    <span id="two">ZZZ</span>
+  </body>
+</html>
+
+<script>
+  let h1 = document.querySelectorAll("h1");
+
+  console.log(document.querySelectorAll("h1"));
+
+  console.log(document.querySelectorAll("h1")[0]);
+  console.log(document.querySelectorAll("h1")[1]);
+  console.log(document.querySelectorAll("h1")[2]);
+
+  for (let i = 0; i < h1.length; i++) {
+    console.log(h1[i]);
+  }
+
+  console.log(document.querySelectorAll("one"));
+  let p = document.querySelectorAll(".one");
+
+  for (let i = 0; i < p.length; i++) {
+    console.log(p[i].textContent);
+  }
+</script>
+
+<!-- querySelector will give you array of elements -->
+<!-- whenever we want to select multiple selector and combine them into array we use querySelectorAll -->
+
+<!-- even if we select single element using querySelectorAll we will get inside array form -->

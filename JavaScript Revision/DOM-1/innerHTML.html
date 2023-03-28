@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inner HTML</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Jagdish Kumawat</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, iusto.
+      </p>
+    </div>
+
+    <div id="our-container">
+      <h1>Anshu Kumawat</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, rerum?
+      </p>
+    </div>
+  </body>
+</html>
+
+<script>
+  // console.log(document.getElementById("container").innerHTML);
+
+  document.getElementById("container").innerHTML =
+    "<p>How are you<p> <h1>Jagdish Kumawat</h1><span>What..</span><span>How..</span>";
+
+  let hehe = document.getElementById("our-container");
+  console.log(hehe);
+
+  hehe.innerHTML = "<h1>Remove previous and added this</h1>";
+</script>

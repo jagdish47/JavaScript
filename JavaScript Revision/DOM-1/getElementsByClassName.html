@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Elements by Class name.</title>
+  </head>
+  <body>
+    <h1 class="one">One</h1>
+    <h2 class="one">Two</h2>
+    <h3 class="one">Three</h3>
+    <h4 class="one">Four</h4>
+    <h5 class="one">Five</h5>
+    <p class="para">Jagdish Kumawat</p>
+    <span class="span"
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, ut.</span
+    >
+  </body>
+</html>
+
+<script>
+  let one = document.getElementsByClassName("one");
+  console.log(one);
+  console.log(one[0].textContent);
+  console.log((one[1].innerHTML = "<div>I have changed it to div</div>"));
+  console.log(one[2].innerText);
+  console.log(one[3]);
+
+  console.log(document.getElementsByClassName("para")[0]);
+  console.log(document.getElementsByClassName("span")[0]);
+
+  for (let i = 0; i < one.length; i++) {
+    console.log(one[i].textContent);
+  }
+</script>
+
+<!-- but we rarely use this getElementsByClassName -->

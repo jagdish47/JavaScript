@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  height: 350px;
+  width: 300px;
+  border: 2px solid black;
+}
+
+img {
+  width: 100px;
+}

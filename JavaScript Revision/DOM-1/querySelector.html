@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecting using Query Selector</title>
+  </head>
+  <body>
+    <h1>tag-one</h1>
+    <h1>tag-two</h1>
+
+    <h2 id="one">Id-one</h2>
+    <h2 id="one">Id-two</h2>
+
+    <h3 class="two">Class-one</h3>
+    <h3 class="two">Class-two</h3>
+  </body>
+</html>
+
+<script>
+  console.log(document.querySelector("h1"));
+  console.log(document.querySelector("#one"));
+  console.log(document.querySelector(".two"));
+</script>
+
+<!-- QuerySelector is use for all(id, class and tag) -->
+<!-- QuerySelector gives you first occurance -->
+<!-- use only whenever you want single element -->
+<!-- you can use combinators in query selector -->
+
+<!-- use use this to select only single element -->
+<!-- it won't return an array -->

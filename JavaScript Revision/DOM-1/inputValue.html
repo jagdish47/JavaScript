@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getting input value</title>
+  </head>
+  <body>
+    <input id="name" type="text" placeholder="enter your name" />
+
+    <select id="gender">
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+    <button onclick="getValue()">Click</button>
+  </body>
+</html>
+
+<script>
+  //   let getValue = function () {
+  //     let xyz = document.getElementById("name").value;
+  //     console.log(xyz);
+
+  //     let gender = document.getElementById("gender");
+  //     console.log(gender.value);
+  //   };
+
+  //   function getValue() {
+  //     console.log(document.getElementById("name").value);
+  //   }
+
+  let name = document.getElementById("name").value;
+  let gender = document.getElementById("gender").value;
+  function getValue() {
+    console.log("Name : ", name);
+    console.log("Gender : ", gender);
+  }
+</script>
