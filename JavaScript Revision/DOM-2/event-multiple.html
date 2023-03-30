@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getting multiple using event target</title>
+
+    <style>
+      .container {
+        display: flex;
+        font-size: 50px;
+      }
+
+      .container > div {
+        height: 100px;
+        width: 100px;
+        border: 2px solid red;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let arr = document.querySelectorAll(".container>div");
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].addEventListener("click", (event) => {
+      event.target.style.backgroundColor = "teal";
+
+      //   console.log(event.target.parentNode); //give you parent node
+      //   console.log(event.target.tagName); //like it is (div or p )
+      //   console.log(event.target.nextSibling);
+      //   console.log(event.target.previousSibling);
+      //   console.log(event.target.childNodes);
+      // //    it will give you an array so you can use loops all that
+
+      //   event.target.nextElementSibling.style.backgroundColor = "green";
+      //   event.target.parentNode.style.backgroundColor = "yellow";
+
+      //   event.target.firstChild.style.backgroundColor = "red";
+      //   console.log(event.target.lastChild);
+      //   these two you have to use on parent container
+    });
+  }
+</script>
+
+<!-- whenever we are selecting multipel element or multiple values . so we can addevent to multiple value so we use event.target -->
+
+<!-- Event delegation: When you have multiple elements that trigger the same type of event, you can use event.target to determine which element was clicked. This allows you to write a single event listener for all elements instead of writing a separate listener for each one. -->
+
+<!-- Form validation: When you want to validate user input in a form, you can use event.target to access the input field that triggered the validation event. You can then check the input value and display an error message if necessary. -->
+
+<!-- Toggle buttons: When you have a group of toggle buttons, you can use event.target to identify the button that was clicked and toggle its state. -->
+
+<!-- Accordion menus: When you have an accordion menu with multiple sections, you can use event.target to identify the section header that was clicked and toggle its content. -->

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>how event works in form</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input
+        type="text"
+        placeholder="enter your name"
+        value="Jagdish"
+        name="name"
+      />
+      <input
+        type="number"
+        value="964929"
+        placeholder="enter your number"
+        name="number"
+      />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
+
+<script>
+  document.querySelector("#myForm").addEventListener("submit", formFunction);
+
+  function formFunction(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    // console.log(formData);
+    // formData will give you form data object
+    console.log(event.target);
+    // event.target will give you complate form
+    console.log(formData.get("name"));
+    console.log(formData.get("number"));
+    // this will give you actuall name and number values
+  }
+</script>
+
+<!-- whenever an event is triggerd an event object is send. -->
+<!-- whenever you use form first step is to preventDefault -->
+
+<!-- event.target will give you complete thing of whom you have triggerd event. -->
+<!-- Jis par bhi event dal rhe he vo pura container de dega event.target -->

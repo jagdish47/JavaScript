@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>creating element using javascript</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let h1 = document.createElement("h1");
+  h1.textContent = "Heading-1";
+
+  let h2 = document.createElement("h2");
+  h2.textContent = "Heading-2";
+
+  let h3 = document.createElement("h3");
+  h3.textContent = "Heading-3";
+
+  let body = document.querySelector("body");
+  //   we have to put all them into body so whatever inside body we can see on screen so we have to add them into body
+  body.appendChild(h1);
+  //   appendChild will append only one child at a time
+  body.append(h1, h2, h3);
+  body.append(h2, h1, h3); //if use multiple below one will work and order matters also
+</script>

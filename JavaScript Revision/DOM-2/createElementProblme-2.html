@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>creating element problem</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let parentDiv = document.createElement("div");
+  let textDiv = document.createElement("div");
+
+  let img = document.createElement("img");
+  img.setAttribute(
+    "src",
+    "https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297__340.png"
+  );
+
+  let name = document.createElement("h1");
+  name.textContent = "Jagdish Kumawat";
+
+  let para = document.createElement("p");
+  para.textContent =
+    "Yes. We're always interested in improving this generator and one of the best ways to do that is to add new and interesting paragraphs to the generator. If you'd like to contribute some random paragraphs, please contact us.";
+
+  let button = document.createElement("button");
+  button.textContent = "View Profile";
+  button.style.backgroundColor = "blue";
+  button.style.padding = "20px 40px";
+  button.style.fontSize = "20px";
+  button.style.color = "white";
+  button.style.border = "none";
+  button.style.borderRadius = "10px";
+  button.style.cursor = "pointer";
+
+  textDiv.append(name, para, button);
+  parentDiv.append(img, textDiv);
+
+  let body = document.querySelector("body");
+  body.append(parentDiv);
+
+  //   styling
+  parentDiv.style.display = "flex";
+  parentDiv.style.alignItems = "center";
+  parentDiv.style.width = "700px";
+  parentDiv.style.border = "2px solid black";
+  parentDiv.style.borderRadius = "10px";
+
+  textDiv.style.width = "400px";
+</script>

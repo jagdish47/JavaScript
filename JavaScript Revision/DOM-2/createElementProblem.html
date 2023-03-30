@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image problem - create element usign JS</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let div = document.createElement("div");
+
+  let img = document.createElement("img");
+  img.setAttribute(
+    "src",
+    "https://img.freepik.com/free-vector/golden-bird-logo-design_1195-336.jpg?w=2000"
+  );
+
+  let p = document.createElement("p");
+  p.textContent =
+    "Another productive way to use this tool to begin a daily writing routine. One way is to generate a random paragraph with the intention to try to rewrite it while still keeping the original meaning. The purpose here is to just get the writing started so that when the writer goes onto their day's writing projects, words are already flowing from their fingers. ";
+
+  let body = document.querySelector("body");
+
+  div.style.height = "300px";
+  div.style.width = "300px";
+
+  img.style.height = "300px";
+
+  p.style.textAlign = "justify";
+
+  div.append(img, p);
+
+  body.appendChild(div);
+</script>

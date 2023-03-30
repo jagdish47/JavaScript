@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Increment and Decrement Function</title>
+  </head>
+  <body>
+    <button class="inc">Increment</button>
+    <button class="dec">Decrement</button>
+
+    <h1>result</h1>
+  </body>
+</html>
+
+<script>
+  let count = 0;
+
+  let increment = document.querySelector(".inc");
+  increment.addEventListener("click", incrementCount);
+
+  let showResult = document.querySelector("h1");
+
+  function incrementCount() {
+    count++;
+
+    showResult.textContent = count;
+    // console.log(count);
+  }
+
+  document.querySelector(".dec").addEventListener("click", decrementCount);
+
+  function decrementCount() {
+    count--;
+
+    if (count > 0) {
+      //   document
+      //     .querySelector(".dec")
+      //     .removeEventListener("click", decrementCount);
+
+      count--;
+      showResult.textContent = count;
+    } else {
+      count = 0;
+      showResult.textContent = count;
+    }
+
+    // console.log(count);
+  }
+</script>
+
+<!-- addEventListner is adding event to any task -->
+<!-- remove event listener we remove the event on task -->
+<!-- both syntax are same only listener is different only -->
