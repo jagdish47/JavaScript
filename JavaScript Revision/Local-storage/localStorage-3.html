@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setting counter in local storage</title>
+  </head>
+  <body>
+    <h1>OUTPUT</h1>
+    <button onclick="Increment()" id="inc">Increment</button>
+    <button onclick="Decrement()" id="dec">Decrement</button>
+  </body>
+</html>
+
+<script>
+  let count = 0;
+
+  function Increment() {
+    count++;
+    document.querySelector("h1").textContent = count;
+    localStorage.setItem("counter", count);
+  }
+
+  function Decrement() {
+    count--;
+    document.querySelector("h1").textContent = count;
+    localStorage.setItem("counter", count);
+  }
+</script>
+
+<!-- actually there we are setting only one element count which id is count always -->
+<!-- so localstorage whenever it get again with same name it will change only it's  -->
+<!-- value. it overwrite with previous one. -->

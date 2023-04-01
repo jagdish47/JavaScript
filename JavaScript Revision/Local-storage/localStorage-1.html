@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>basic of localstorage</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // Setting values
+
+  localStorage.setItem("name", "Jagdish Kumawat");
+  localStorage.setItem("number", 9649294747);
+  localStorage.setItem("arr", [1, 2, 3, 4, 5, 6]);
+  localStorage.setItem("name1", "Anshu");
+  localStorage.setItem("name2", "Yuvraj");
+  localStorage.setItem("name3", "Daya");
+
+  //   Get values
+
+  console.log(localStorage.getItem("name"));
+  console.log(localStorage.getItem("number"));
+  console.log(localStorage.getItem("arr"));
+
+  //   Removing
+
+  localStorage.removeItem("name1");
+  localStorage.removeItem("name2");
+  localStorage.removeItem("name3");
+
+  //   delete All
+
+  localStorage.clear();
+</script>

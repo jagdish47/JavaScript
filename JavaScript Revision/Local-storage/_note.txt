@@ -1,0 +1,29 @@
+Que :- what is local storage ?
+Ans :- Local storage refers to a feature in web browsers that allows websites to store data on a user's device
+
+Que :- how it stores data?
+Ans :- The data is stored in key-value pairs, which can be accessed and manipulated using JavaScript.
+Web developers can use local storage to store various types of data, such as user preferences, shopping cart items, or data entered into a form
+
+Que :- Localstorage vs session storage?
+Ans :- Local storage is implemented using the HTML5 Web Storage API, which provides two mechanisms for storing data on the client-side: localStorage and sessionStorage. localStorage is used for long-term storage of data, while sessionStorage is used for short-term storage that is only available for the duration of a browser session.
+
+Que :- How Localstorage works?
+
+localStorage is a way to store key-value pairs in the browser that persists even after the browser is closed. Here are some methods that can be used with localStorage:
+
+    localStorage.setItem(key, value): This method sets the value for a given key in localStorage.
+    Example: localStorage.setItem("username", "John")
+
+    localStorage.getItem(key): This method gets the value for a given key in localStorage.
+    Example: localStorage.getItem("username") // returns "John"
+
+    localStorage.removeItem(key): This method removes the value for a given key in localStorage.
+    Example: localStorage.removeItem("username")
+
+    localStorage.clear(): This method clears all the key-value pairs in localStorage.
+    Example: localStorage.clear()
+
+Note that the value in localStorage can only be a string. If you want to store an object or an array, you need to first convert it to a string using JSON.stringify() and then store it. Similarly, when you retrieve the value, you need to parse it back to an object or an array using JSON.parse().
+
+If we get two keys with same name than it overwrite previous one.

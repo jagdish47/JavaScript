@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>store obj and array and getting them back</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // STORING OBJECT
+  let info = {
+    name: "Jagdish Kumawat",
+    DOB: "01-Feb-1998",
+    gender: "Male",
+    location: "India",
+  };
+
+  let infoJSON = JSON.stringify(info);
+  localStorage.setItem("info", infoJSON);
+
+  let Rajasthan = {
+    country: "India",
+    state: "Rajasthan",
+    dist: 50,
+    fort: ["chittorgarh", "kumbhalgarh", "sardargarh"],
+  };
+
+  localStorage.setItem("Rajasthan", JSON.stringify(Rajasthan));
+
+  //   STORING ARRAY
+
+  let name = ["Jagdish", "Anshu", "Yuvraj", "Rajeshwar", "Laxmi"];
+  let nameJSON = JSON.stringify(name);
+  localStorage.setItem("name", nameJSON);
+
+  let num = [10, 30, 50, 60, 70, 100, 150];
+  localStorage.setItem("number", JSON.stringify(num));
+
+  //   Getting OBJECT
+
+  console.log(JSON.parse(localStorage.getItem("info")));
+  console.log(JSON.parse(localStorage.getItem("name")));
+</script>
