@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning about Promises</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let passExam = false;
+
+  let myPromises = new Promise(function (resolve, reject) {
+    if (passExam) {
+      resolve("You will get Tablet and chocoltes");
+    } else {
+      reject("You will get chappal");
+    }
+  });
+
+  console.log(myPromises);
+
+  myPromises.then(function (res) {
+    console.log("res : ", res);
+  });
+
+  myPromises.catch(function (err) {
+    console.log("error : ", err);
+  });
+</script>

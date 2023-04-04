@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning How this keyword works</title>
+
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Learning How this keyword works</h1>
+  </body>
+</html>
+
+<script>
+  console.log(this); //window object
+
+  //   Function
+  function letsCheckInFunction() {
+    console.log(this); //give you window object also
+  }
+
+  letsCheckInFunction();
+
+  // Object
+  let person1 = {
+    name: "Jagdish Kumawat",
+    test: function () {
+      console.log(this);
+    },
+  };
+
+  person1.test(); //give you person1 object
+</script>

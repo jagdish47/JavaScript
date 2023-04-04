@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Fetch API</title>
+  </head>
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 70vw;
+    }
+
+    #container img {
+      height: 100px;
+      width: 100px;
+    }
+
+    .one {
+      height: 200px;
+      width: 200px;
+      padding: 25px;
+      margin: 0px 10px 10px 10px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+  </style>
+
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  let url = "https://fakestoreapi.com/products";
+
+  // -------------------------------------METHOD-1-----------------------------------
+
+  //   let data = fetch(url);
+
+  //   data
+  //     .then(function (res) {
+  //       // console.log("result : ", res);
+  //       return res.json();
+  //     })
+  //     .then(function (ans) {
+  //       console.log(ans);
+  //     });
+
+  //   data.catch(function (err) {
+  //     console.log("Error : ", err);
+  //   });
+
+  // ------------------------------------------METHOD-2------------------------------------------
+
+  async function getData() {
+    let result = await fetch(url);
+
+    let data = await result.json();
+
+    getProduct(data);
+    // console.log(data);
+  }
+  getData();
+
+  let container = document.querySelector("#container");
+
+  function getProduct(data) {
+    console.log(data);
+    data.forEach(function (ele) {
+      let div = document.createElement("div");
+      div.classList.add("one");
+
+      let img = document.createElement("img");
+      img.setAttribute("src", ele.image);
+
+      let head = document.createElement("p");
+      head.textContent = ele.title;
+
+      let price = document.createElement("h4");
+      price.textContent = ele.price;
+
+      div.append(img, head, price);
+      container.append(div);
+    });
+  }
+</script>
