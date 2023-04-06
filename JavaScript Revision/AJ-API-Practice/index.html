@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Country - provides useful statistics about every country in the world.
+    </title>
+
+    <style>
+      #input {
+        font-size: 20px;
+        padding: 5px 5px 5px 5px;
+        border-right: none;
+        outline: none;
+      }
+
+      h1 {
+        font-size: 80px;
+      }
+
+      p,
+      h3 {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 5px 5px 5px 5px;
+        border-left: none;
+        cursor: pointer;
+      }
+      .container {
+        /* border: 1px solid black; */
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .countryCon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card {
+        height: 500px;
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding-left: 20px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4),
+          0px 7px 13px -3px rgba(0, 0, 0, 0.3),
+          inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input id="input" type="text" placeholder="Enter country code" />
+      <button onclick="getCountryData()">Search</button>
+    </div>
+
+    <div class="countryCon"></div>
+  </body>
+</html>
+
+<script src="./index.js"></script>
+
+<!-- api key = 7jR+0kywBozoch1Z+rq1Xg==z4LAuh1dfU71Sg48 -->

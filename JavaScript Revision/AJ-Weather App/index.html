@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <input id="city" type="text" placeholder="Enter city name" />
+    <button onclick="getWeatherData()">search</button>
+
+    <div class="container"></div>
+
+    <div
+      style="
+        text-decoration: none;
+        overflow: hidden;
+        max-width: 100%;
+        width: 500px;
+        height: 500px;
+      "
+    >
+      <div
+        id="my-map-display"
+        style="height: 100%; width: 100%; max-width: 100%"
+      >
+        <iframe
+          style="height: 100%; width: 100%; border: 0"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <a
+        class="googlemaps-made"
+        href="https://www.bootstrapskins.com/themes"
+        id="grab-map-info"
+        >premium bootstrap themes</a
+      ><style>
+        #my-map-display img.text-marker {
+          max-width: none !important;
+          background: none !important;
+        }
+        img {
+          max-width: none;
+        }
+      </style>
+    </div>
+  </body>
+</html>
+
+<!-- api key = 1c6d54d81c8768f887264a02d874cd66 -->
+
+<script>
+  let key = "1c6d54d81c8768f887264a02d874cd66";
+
+  // let iframe = document.querySelector("iframe");
+
+  // let city = document.querySelector("#city");
+
+  // iframe.src = `https://www.google.com/maps/embed/v1/place?q=${city}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`;
+
+  async function getWeatherData() {
+    let iframe = document.querySelector("iframe");
+    let city = document.querySelector("#city").value;
+
+    iframe.src = `https://www.google.com/maps/embed/v1/place?q=${city}&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8`;
+
+    // let city = document.querySelector("#city").value;
+
+    let res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`
+    );
+
+    let data = await res.json();
+
+    console.log(data);
+
+    appendData(data);
+    // console.log(data);
+  }
+
+  let container = document.querySelector(".container");
+
+  function appendData(data) {
+    // container.innerHTML = "";
+    container.innerHTML = null;
+
+    let name = document.createElement("p");
+    name.textContent = data.name;
+
+    console.log(data.main.temp);
+
+    let temp = document.createElement("p");
+    temp.innerText = data.main.temp;
+
+    let humadity = document.createElement("p");
+    humadity.innerText = data.main.humidity;
+
+    let presure = document.createElement("p");
+    presure.innerText = data.main.pressure;
+
+    container.append(name, temp, humadity, presure);
+  }
+</script>
